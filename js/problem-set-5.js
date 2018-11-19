@@ -21,11 +21,20 @@
  */
 
 function mario() {
-
+  var input = prompt("Enter a number:");
   ////////////// DO NOT MODIFY
-  let height; // DO NOT MODIFY
+  let height = input; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
+  if (height <= 1 || height >= 23){
+    var input = prompt("Enter a number:");
+  }
 
+  var integer = Number.isInteger(height);
+  if (height != true){
+    var input = prompt("Enter a number:");
+  }
+
+  }
   // WRITE YOUR EXERCISE 1 CODE HERE
 
   ////////////////////////// DO NOT MODIFY
