@@ -25,23 +25,25 @@ function mario() {
   ////////////// DO NOT MODIFY
   let height = input; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
-  if (height <= 1 || height >= 23){
+  if (height < 1 || height > 23){
     var input = prompt("Enter a number:");
   }
 
-  var integer = Number.isInteger(height);
-  if (height != true){
+  if (isNaN(height) == true){
     var input = prompt("Enter a number:");
   }
 
+  function {
+    
   }
+
+
   // WRITE YOUR EXERCISE 1 CODE HERE
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
 }
-
 /*
  * Mario, Again. 10 points.
  *
