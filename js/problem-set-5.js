@@ -29,12 +29,21 @@ function mario() {
     var input = prompt("Enter a number:");
   }
 
-  if (isNaN(height) == true){
+  else if (isNaN(height) == true){
     var input = prompt("Enter a number:");
   }
 
-  function {
-    
+  else {
+    if (height == 1){
+      document.getElementById("mario-easy-output").innerHTML = "#";
+    }
+
+    var innerh = document.getElementById("mario-easy-output").innerHTML;
+    else{
+      for (var i = 0, i <= height, i++){
+        innerh += "#";
+      }
+    }
   }
 
 
