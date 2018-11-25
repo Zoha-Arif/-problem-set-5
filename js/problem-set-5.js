@@ -25,25 +25,44 @@ function mario() {
   ////////////// DO NOT MODIFY
   let height = input; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
-  if (height < 1 || height > 23){
-    var input = prompt("Enter a number:");
+
+  height = Number(height);
+  if (Number.isInteger(height) == false) {
+    while (Number.isInteger(height) == false){
+      var input1 = prompt("That's not a number! Enter a number:");
+      height = input1;
+      height = Number(height);
+    }
   }
 
-  else if (isNaN(height) == true){
-    var input = prompt("Enter a number:");
+height = Number(height);
+  if (1 < height && height < 23) {
   }
 
   else {
-    if (height == 1){
-      document.getElementById("mario-easy-output").innerHTML = "#";
+    while (height < 1 || height > 23) {
+      var input2 = prompt("Enter a number between 1 and 23:");
+      height = input2;
+      height = Number(height);
     }
+}
+//Final row length = height + 1;
+//Number of spaces = final row length - hashtags;
+//Number of hashtags = final row length - spaces;
+//Number of hashtags = i + 2
 
-    var innerh = document.getElementById("mario-easy-output").innerHTML;
-    else{
-      for (var i = 0, i <= height, i++){
-        innerh += "#";
-      }
+  for (var i = 0; i < height; i++){
+    var output_a = '&nbsp';
+    var hashes;
+    var numb_hashes = i + 2;
+    var numb_of_spaces = height - numb_hashes;
+      for (var w = 0; w < numb_of_spaces; w++) {
+        output_a = output_a + '&nbsp';
     }
+      for (var z = 0; z < numb_hashes; z++) {
+        hashes = hashes + "#";
+      }
+    document.getElementById("mario-easy-output").innerHTML += `trial ${i} ${output_a} ${hashes} <br/>`;
   }
 
 
