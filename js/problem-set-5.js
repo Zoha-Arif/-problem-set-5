@@ -50,7 +50,7 @@ height = Number(height);
 //Number of spaces = final row length - hashtags;
 //Number of hashtags = final row length - spaces;
 //Number of hashtags = i + 2
-
+// char add + 1?
   for (var i = 0; i < height; i++){
     var output_a = '&nbsp; ';
     var hashes = "#";
@@ -285,7 +285,7 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   if (Number.isInteger(windspeed) == false) {
     while (Number.isInteger(windspeed) == false){
-      var windspeed1 = prompt("Guess a number between negative and positive infinity:");
+      var windspeed1 = prompt("Enter windspeed:");
       windspeed = windspeed1;
       windspeed = Number(windspeed);
     }
@@ -297,23 +297,35 @@ function hurricane() {
 
   else {
     while (windspeed < Number.NEGATIVE_INFINITY || windspeed > Number.POSITIVE_INFINITY) {
-      var windspeed2 = prompt("Guess a number between negative and positive infinity:");
+      var windspeed2 = prompt("Enter windspeed:");
       windspeed = windspeed2;
       windspeed = Number(windspeed);
     }
   }
 
   if (windspeed >= 157){
-    document.getElementById("guess-output").innerHTML += "Category 5"; 
+    document.getElementById("hurricane-output").innerHTML += "Category 5 Hurricane.";
   }
-  Category 5: 157+
-  Category 4: 130-156
-  Category 3: 111-129
-  Catgeory 2: 96-110
-  Category 1: 74-95
-  Tropical Storm: 39-73
 
-  if
+  else if (windspeed >= 130 && windspeed <= 156) {
+    document.getElementById("hurricane-output").innerHTML += "Category 4 Hurricane.";
+  }
+
+  else if (windspeed >= 111 && windspeed <= 129) {
+    document.getElementById("hurricane-output").innerHTML += "Category 3 Hurricane.";
+  }
+
+  else if (windspeed >= 96 && windspeed <= 110) {
+    document.getElementById("hurricane-output").innerHTML += "Category 2 Hurricane.";
+  }
+
+  else if (windspeed >= 74 && windspeed <= 95) {
+    document.getElementById("hurricane-output").innerHTML += "Category 1 Hurricane.";
+  }
+
+  else if (windspeed >= 39 && windspeed <= 73) {
+    document.getElementById("hurricane-output").innerHTML += "Tropical Storm.";
+  }
 
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
