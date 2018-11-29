@@ -52,17 +52,17 @@ height = Number(height);
 //Number of hashtags = i + 2
 
   for (var i = 0; i < height; i++){
-    var output_a = '&nbsp';
-    var hashes;
-    var numb_hashes = i + 2;
-    var numb_of_spaces = height - numb_hashes;
+    var output_a = '&nbsp; ';
+    var hashes = "#";
+    var numb_hashes = i + 1;
+    var numb_of_spaces = height - (numb_hashes + 7);
       for (var w = 0; w < numb_of_spaces; w++) {
-        output_a = output_a + '&nbsp';
+        output_a = output_a + '&nbsp; ';
     }
       for (var z = 0; z < numb_hashes; z++) {
         hashes = hashes + "#";
       }
-    document.getElementById("mario-easy-output").innerHTML += `trial ${i} ${output_a} ${hashes} <br/>`;
+    document.getElementById("mario-easy-output").innerHTML += `${output_a} ${hashes} <br/>`;
   }
 
 
@@ -99,6 +99,20 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
+
+  for (var i = 0; i < height; i++){
+    var output_a = '&nbsp;';
+    var hashes = "#";
+    var numb_hashes = i + 1;
+    var numb_of_spaces = height - (numb_hashes + 7);
+      for (var w = 0; w < numb_of_spaces; w++) {
+        output_a = output_a + ' &nbsp;';
+    }
+      for (var z = 0; z < numb_hashes; z++) {
+        hashes = hashes + "#";
+      }
+    document.getElementById("mario-easy-output").innerHTML += `trial ${i} ${output_a} ${hashes} <br/>`;
+  }
 
   // WRITE YOUR EXERCISE 2 CODE HERE
 
