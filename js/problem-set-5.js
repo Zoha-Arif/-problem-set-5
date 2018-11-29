@@ -205,6 +205,47 @@ function credit() {
  */
 
 function guess() {
+  var right_num = Math.floor((Math.random() * 1000) + 1);
+  var user_guess = prompt("Guess a number between 1 and 1000:");
+  user_guess = Number(user_guess);
+
+  if (Number.isInteger(user_guess) == false) {
+    while (Number.isInteger(user_guess) == false){
+      var user_guess1 = prompt("Guess a number between 1 and 1000:");
+      user_guess = user_guess1;
+      user_guess = Number(user_guess);
+    }
+  }
+
+user_guess = Number(user_guess);
+  if (1 < user_guess && user_guess < 1000) {
+  }
+
+  else {
+    while (user_guess < 1 || user_guess > 1000) {
+      var user_guess2 = prompt("Guess a number between 1 and 1000:");
+      user_guess = user_guess2;
+      user_guess = Number(user_guess2);
+    }
+}
+
+var attempts = 0;
+
+if (user_guess != right_num) {
+  while(user_guess != right_num){
+    if (user_guess > right_num){
+      var user_guess = prompt("Guess again! Too high!");
+      user_guess = Number(user_guess);
+      attempts = attempts + 1;
+    }
+    else if (user_guess < right_num){
+      var user_guess = prompt("Guess again! Too low!");
+      user_guess = Number(user_guess);
+      attempts = attempts + 1;
+    }
+  }
+}
+  document.getElementById("guess-output").innerHTML += `Attempts: ${attempts} Correct Number: ${right_num}`
 
   // WRITE YOUR EXERCISE 4 CODE HERE
 
@@ -242,6 +283,37 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
+  if (Number.isInteger(windspeed) == false) {
+    while (Number.isInteger(windspeed) == false){
+      var windspeed1 = prompt("Guess a number between negative and positive infinity:");
+      windspeed = windspeed1;
+      windspeed = Number(windspeed);
+    }
+  }
+
+  windspeed = Number(windspeed);
+  if (Number.NEGATIVE_INFINITY < windspeed && windspeed < Number.POSITIVE_INFINITY) {
+  }
+
+  else {
+    while (windspeed < Number.NEGATIVE_INFINITY || windspeed > Number.POSITIVE_INFINITY) {
+      var windspeed2 = prompt("Guess a number between negative and positive infinity:");
+      windspeed = windspeed2;
+      windspeed = Number(windspeed);
+    }
+  }
+
+  if (windspeed >= 157){
+    document.getElementById("guess-output").innerHTML += "Category 5"; 
+  }
+  Category 5: 157+
+  Category 4: 130-156
+  Category 3: 111-129
+  Catgeory 2: 96-110
+  Category 1: 74-95
+  Tropical Storm: 39-73
+
+  if
 
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
