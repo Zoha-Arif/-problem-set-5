@@ -55,16 +55,16 @@ height = Number(height);
   for (var i = 1; i <= height; i++){
     var numb_hashes = i;
     var numb_of_spaces = height - numb_hashes;
-    var output_a = '  ';
+    var output_a = ' ';
     var hashes = "#";
       for (var w = 1; w <= numb_of_spaces; w++) {
-          output_a = output_a + '<code>&nbsp</code>';
+          output_a = output_a + '<code>&nbsp&nbsp</code>';
         }
       for (var z = 0; z < numb_hashes; z++) {
         hashes = hashes + "#";
       }
 
-      document.getElementById("mario-easy-output").innerHTML += `${output_a} ${hashes} <br/>`;
+      document.getElementById("mario-easy-output").innerHTML += `${output_a}${hashes}<br/>`;
 
   }
 
@@ -134,17 +134,15 @@ height = Number(height);
     for (var i = 1; i <= height; i++){
       var numb_hashes = i;
       var numb_of_spaces = height - numb_hashes;
-      var output_a = '  ';
+      var output_a = '';
       var hashes = "#";
-        for (var w = 1; w <= numb_of_spaces; w++) {
-            output_a = output_a + '<code>&nbsp</code>';
-          }
-        for (var z = 0; z < numb_hashes; z++) {
-          hashes = hashes + "#";
-        }
-
+      for (var w = 1; w <= numb_of_spaces; w++) {
+          output_a = output_a + '<code>&nbsp&nbsp</code>';
+      }
+      for (var z = 0; z < numb_hashes; z++) {
+        hashes = hashes + "#";
+      }
         document.getElementById("mario-hard-output").innerHTML += `${output_a} ${hashes} &nbsp&nbsp&nbsp ${hashes}<br/>`;
-
     }
 
   // WRITE YOUR EXERCISE 2 CODE HERE
@@ -218,14 +216,67 @@ card1 = card;
     }
   }
 
-  var creditcard = [];
-  for (var i = 0; i < card1.length; i++){
-    creditcard.push(card1.charAt(i));
+var creditcard = [];
+for (var i = 0; i < card1.length; i++){
+  creditcard.push(card1.charAt(i));
+}
+
+for (var w = -2; w <= card1.length;) {
+  creditcard[w] = creditcard[w] * 2;
+  var sum = sum + creditcard[w];
+    w = w - 2;
+}
+
+for (var z = -1; z <= card1.length;) {
+  var sum2 = sum + creditcard[z];
+}
+
+  if (sum2 % 10 == 0){
   }
 
-  for (var w = -1; w < creditcard/ 2; w- 2){
-    creditcard[w]
+  else {
+    while (sum2 % 10 != 0){
+      var input4 = prompt("Enter a correct credit card number:");
+      card1 = input4;
+      var creditcard = [];
+      for (var i = 0; i < card1.length; i++){
+        creditcard.push(card1.charAt(i));
+      }
+
+      for (var w = -2; w <= card1.length;) {
+        creditcard[w] = creditcard[w] * 2;
+        var sum = sum + creditcard[w];
+          w = w - 2;
+      }
+
+      for (var z = -1; z <= card1.length;) {
+        var sum2 = sum + creditcard[z]
+        z = z - 2;
+      }
   }
+}
+
+  if (card1.chartAt(0) == 3) {
+    if (card1.chartAt(1) == 4 || card1.chartAt(1) == 7){
+      if(card1.length == 15){
+          document.getElementById("credit-output").innerHTML = "American Express";
+      }
+    }
+}
+
+  else if (card1.chartAt(0) == 5) {
+    if (card1.chartAt(1) >= 1 && card1.chartAt(1) <= 5){
+      if (card1.length == 16){
+        document.getElementById("credit-output").innerHTML = "Master Card";
+      }
+    }
+  }
+
+  else if (card1.chartAt(0) == 4) {
+      if (card1.length >= 13 && card1.length <= 16){
+        document.getElementById("credit-output").innerHTML = "Visa";
+      }
+    }
 
 
   // WRITE YOUR EXERCISE 3 CODE HERE
@@ -417,6 +468,50 @@ function gymnastics() {
   let total = 0; //// DO NOT MODIFY
   let scores = []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
+i = 1;
+while (i <= 6){
+  var score = prompt(`Enter six scores. You will be prompted six times. Each time enter one score. \n Enter score ${i}:`);
+
+  score = Number(score);
+  if (Number.isInteger(score) == false) {
+    while (Number.isInteger(score) == false){
+      var input6 = prompt("That's not a number! Enter a number:");
+      score = input6;
+      score = Number(score);
+    }
+  }
+
+score = Number(score);
+  if (1 < score && score < 10) {
+  }
+
+  else {
+    while (score < 1 || score > 10) {
+      var input8 = prompt("Enter a score between 1 and 10:");
+      score = input8;
+      score = Number(score);
+      if (Number.isInteger(score) == false) {
+        while (Number.isInteger(score) == false){
+          var input6 = prompt("That's not a number! Enter a number:");
+          score = input6;
+          score = Number(score);
+        }
+      }
+    }
+  }
+  scores.push(score);
+  i++;
+}
+
+//Next steps: discard lowest and highest number.
+//Take average of scores.
+
+for (var b = 1; b < scores.length; b++){
+  if scores[b] > scores[b - 1]{
+    
+  }
+}
+
 
   /*
    * NOTE: The 'total' variable should be representative of the sum of all
