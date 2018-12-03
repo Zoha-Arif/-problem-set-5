@@ -51,18 +51,21 @@ height = Number(height);
 //Number of hashtags = final row length - spaces;
 //Number of hashtags = i + 2
 // char add + 1?
-  for (var i = 0; i < height; i++){
-    var output_a = '&nbsp; ';
+
+  for (var i = 1; i <= height; i++){
+    var numb_hashes = i;
+    var numb_of_spaces = height - numb_hashes;
+    var output_a = '  ';
     var hashes = "#";
-    var numb_hashes = i + 1;
-    var numb_of_spaces = height - (numb_hashes + 7);
-      for (var w = 0; w < numb_of_spaces; w++) {
-        output_a = output_a + '&nbsp; ';
-    }
+      for (var w = 1; w <= numb_of_spaces; w++) {
+          output_a = output_a + '<code>&nbsp</code>';
+        }
       for (var z = 0; z < numb_hashes; z++) {
         hashes = hashes + "#";
       }
-    document.getElementById("mario-easy-output").innerHTML += `${output_a} ${hashes} <br/>`;
+
+      document.getElementById("mario-easy-output").innerHTML += `${output_a} ${hashes} <br/>`;
+
   }
 
 
@@ -100,19 +103,49 @@ function marioAgain() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
-  for (var i = 0; i < height; i++){
-    var output_a = '&nbsp;';
-    var hashes = "#";
-    var numb_hashes = i + 1;
-    var numb_of_spaces = height - (numb_hashes + 7);
-      for (var w = 0; w < numb_of_spaces; w++) {
-        output_a = output_a + ' &nbsp;';
+  height = Number(height);
+  if (Number.isInteger(height) == false) {
+    while (Number.isInteger(height) == false){
+      var input1 = prompt("That's not a number! Enter a number:");
+      height = input1;
+      height = Number(height);
     }
-      for (var z = 0; z < numb_hashes; z++) {
-        hashes = hashes + "#";
-      }
-    document.getElementById("mario-easy-output").innerHTML += `trial ${i} ${output_a} ${hashes} <br/>`;
   }
+
+height = Number(height);
+  if (1 < height && height < 23) {
+  }
+
+  else {
+    while (height < 1 || height > 23) {
+      var input2 = prompt("Enter a number between 1 and 23:");
+      height = input2;
+      height = Number(height);
+    }
+}
+
+//Final number of rows = height + 1;
+//Number of spaces = final row length - hashtags;
+//Number of hashtags = final row length - spaces;
+//Number of hashtags = i + 2
+// char add + 1?
+//workflow: print original pyramid three spaces, then print the same number of hashes.
+
+    for (var i = 1; i <= height; i++){
+      var numb_hashes = i;
+      var numb_of_spaces = height - numb_hashes;
+      var output_a = '  ';
+      var hashes = "#";
+        for (var w = 1; w <= numb_of_spaces; w++) {
+            output_a = output_a + '<code>&nbsp</code>';
+          }
+        for (var z = 0; z < numb_hashes; z++) {
+          hashes = hashes + "#";
+        }
+
+        document.getElementById("mario-hard-output").innerHTML += `${output_a} ${hashes} &nbsp&nbsp&nbsp ${hashes}<br/>`;
+
+    }
 
   // WRITE YOUR EXERCISE 2 CODE HERE
 
@@ -166,6 +199,34 @@ function credit() {
   //////////// DO NOT MODIFY
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
+  card = prompt("Enter your credit card number:");
+
+  var card1 = Number(card);
+  if (Number.isInteger(card1) == false) {
+    while (Number.isInteger(card1) == false){
+      var input1 = prompt("That's not a number! Enter a correct credit card number:");
+      card1 = input1;
+      card1 = Number(card1);
+    }
+  }
+
+card1 = card;
+  if (card1.length < 13 || card1.length > 16) {
+    while (card1.length < 13 || card1.length > 16){
+      var input2 = prompt("Enter a correct credit card number:");
+      card1 = input2;
+    }
+  }
+
+  var creditcard = [];
+  for (var i = 0; i < card1.length; i++){
+    creditcard.push(card1.charAt(i));
+  }
+
+  for (var w = -1; w < creditcard/ 2; w- 2){
+    creditcard[w]
+  }
+
 
   // WRITE YOUR EXERCISE 3 CODE HERE
 
