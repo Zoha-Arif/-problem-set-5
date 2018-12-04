@@ -416,27 +416,30 @@ function hurricane() {
   }
 
   if (windspeed >= 157){
-    document.getElementById("hurricane-output").innerHTML += "Category 5 Hurricane.";
+    document.getElementById("hurricane-output").innerHTML = "Category 5 Hurricane.";
   }
-
   else if (windspeed >= 130 && windspeed <= 156) {
-    document.getElementById("hurricane-output").innerHTML += "Category 4 Hurricane.";
+    document.getElementById("hurricane-output").innerHTML = "Category 4 Hurricane.";
   }
 
   else if (windspeed >= 111 && windspeed <= 129) {
-    document.getElementById("hurricane-output").innerHTML += "Category 3 Hurricane.";
+    document.getElementById("hurricane-output").innerHTML = "Category 3 Hurricane.";
   }
 
   else if (windspeed >= 96 && windspeed <= 110) {
-    document.getElementById("hurricane-output").innerHTML += "Category 2 Hurricane.";
+    document.getElementById("hurricane-output").innerHTML = "Category 2 Hurricane.";
   }
 
   else if (windspeed >= 74 && windspeed <= 95) {
-    document.getElementById("hurricane-output").innerHTML += "Category 1 Hurricane.";
+    document.getElementById("hurricane-output").innerHTML = "Category 1 Hurricane.";
   }
 
   else if (windspeed >= 39 && windspeed <= 73) {
-    document.getElementById("hurricane-output").innerHTML += "Tropical Storm.";
+    document.getElementById("hurricane-output").innerHTML = "Tropical Storm.";
+  }
+
+  else {
+    document.getElementById("hurricane-output").innerHTML = "The skies are calm...";
   }
 
   ///////////////////////////////// DO NOT MODIFY
@@ -468,7 +471,7 @@ function gymnastics() {
   let total = 0; //// DO NOT MODIFY
   let scores = []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
-i = 1;
+var i = 1;
 while (i <= 6){
   var score = prompt(`Enter six scores. You will be prompted six times. Each time enter one score. \n Enter score ${i}:`);
 
@@ -481,8 +484,8 @@ while (i <= 6){
     }
   }
 
-score = Number(score);
-  if (1 < score && score < 10) {
+  score = Number(score);
+  if (score >= 1 && score <= 10) {
   }
 
   else {
@@ -506,11 +509,31 @@ score = Number(score);
 //Next steps: discard lowest and highest number.
 //Take average of scores.
 
+var max = scores[0];
 for (var b = 1; b < scores.length; b++){
-  if scores[b] > scores[b - 1]{
-    
+  if (scores[b] > max) {
+    max = scores[b];
+    var h = b;
   }
 }
+
+var min = scores[0];
+for (var j = 1; j < scores.length; j++){
+  if (scores[j] < min) {
+    min = scores[j];
+    var g = j;
+  }
+}
+
+scores.splice(h, 1);
+scores.splice(g, 1);
+
+for (var v = 0; v < scores.length; v++){
+  total = total + scores[v];
+  average = total / (scores.length);
+}
+
+document.getElementById("gymnastics-output").innerHTML = `Discarded: ${min}, ${max} <br/> Score: ${average}`;
 
 
   /*
@@ -578,6 +601,128 @@ function reportCard() {
    *       grades the user enters, respectively.
    */
 
+   var testscores = [];
+   var test1;
+   while (test1 != -1){
+     var test1 = prompt("Enter your test scores. Type '-1' when you're done.");
+
+     test1 = Number(test1);
+     if (Number.isInteger(test1) == false) {
+       while (Number.isInteger(test1) == false){
+         var input8 = prompt("That's not a number! Enter a number:");
+         test1 = input8;
+         test1 = Number(test1);
+       }
+     }
+
+     test1 = Number(test1);
+     if (test1 != -1){
+     if (test1 >= 0 && test1 <= 100) {
+     }
+
+     else {
+       while (test1 < 0 || test1 > 100) {
+         var input8 = prompt("Enter a test score between 0 and 100:");
+         test1 = input8;
+         test1 = Number(test1);
+       }
+     }
+   }
+     testscores.push(test1);
+   }
+
+   tests = testscores.length;
+
+for (var u = 0; u < testscores.length; u++){
+  testTotal = testTotal + testscores[u];
+}
+
+var test_average = (testTotal / tests) * 0.60;
+
+
+   var quizscores = [];
+   var quiz1;
+   while (quiz1 != -1){
+     var quiz1 = prompt("Enter your quiz scores. Type '-1' when you're done.");
+
+     quiz1 = Number(quiz1);
+     if (Number.isInteger(quiz1) == false) {
+       while (Number.isInteger(quiz1) == false){
+         var input9 = prompt("That's not a number! Enter a number:");
+         quiz1 = input9;
+         quiz1 = Number(quiz1);
+       }
+     }
+
+     quiz1 = Number(quiz1);
+     if (quiz1 != -1){
+     if (quiz1 >= 0 && quiz1 <= 100) {
+     }
+
+     else {
+       while (quiz1 < 0 || quiz1 > 100) {
+         var input8 = prompt("Enter a quiz score between 0 and 100:");
+         quiz1 = input8;
+         quiz1 = Number(test1);
+       }
+     }
+   }
+     quizscores.push(quiz1);
+   }
+
+   quizzes = quizscores.length;
+
+   for (var k = 0; k < quizscores.length; k++){
+     quizTotal = quizTotal + quizscores[k];
+   }
+
+   var quiz_average = (quizTotal / quizzes) * 0.30;
+
+
+   var homeworkscores = [];
+   var homework1;
+   while (homework1 != -1){
+     var homework1 = prompt("Enter your homework scores. Type '-1' when you're done.");
+
+     homework1 = Number(homework1);
+     if (Number.isInteger(homework1) == false) {
+       while (Number.isInteger(homework1) == false){
+         var input4 = prompt("That's not a number! Enter a number:");
+         homework1 = input4;
+         homework1 = Number(homework1);
+       }
+     }
+
+     homework1 = Number(homework1);
+     if (homework1 != -1){
+     if (homework1 >= 0 && homework1 <= 100) {
+     }
+
+     else {
+       while (homework1 < 0 || homework1 > 100) {
+         var input8 = prompt("Enter a homework score between 0 and 100:");
+         homework1 = input8;
+         homework1 = Number(homework1);
+       }
+     }
+   }
+     homeworkscores.push(homework1);
+   }
+
+   homeworks = homeworkscores.length;
+
+   for (var m = 0; m < homeworkscores.length; m++){
+     homeworkTotal = homeworkTotal + homeworkscores[m];
+   }
+
+   var homework_average = (homeworkTotal / homeworks) * 0.10;
+
+var final = (test_average + quiz_average + homework_average).toFixed(2);
+test_average = (testTotal / tests).toFixed(2);
+quiz_average = (quizTotal / quizzes).toFixed(2);
+homework_average = (homeworkTotal / homeworks).toFixed(2);
+
+document.getElementById("report-card-output").innerHTML = `Tests: ${test_average} <br/> Quizzes: ${quiz_average} <br/> Homework: ${homework_average} <br/> Grade: ${final}`;
   /////////////////////// DO NOT MODIFY
   check('report-card', // DO NOT MODIFY
     testTotal, ////////// DO NOT MODIFY
