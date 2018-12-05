@@ -208,6 +208,8 @@ function credit() {
     }
   }
 
+  console.log(1);
+
 card1 = card;
   if (card1.length < 13 || card1.length > 16) {
     while (card1.length < 13 || card1.length > 16){
@@ -216,32 +218,50 @@ card1 = card;
     }
   }
 
+  console.log(2);
+
 var creditcard = [];
 for (var i = 0; i < card1.length; i++){
   creditcard.push(card1.charAt(i));
 }
 
+console.log(3);
+
+console.log(card.length);
+//infinite loop because "w" will always be less than card1 
 for (var w = -2; w <= card1.length;) {
   creditcard[w] = creditcard[w] * 2;
   var sum = sum + creditcard[w];
     w = w - 2;
+
+  console.log("w is " + w);
 }
+
+console.log(4);
 
 for (var z = -1; z <= card1.length;) {
   var sum2 = sum + creditcard[z];
 }
 
+console.log(5);
+
   if (sum2 % 10 == 0){
   }
 
   else {
+    console.log(6);
     while (sum2 % 10 != 0){
       var input4 = prompt("Enter a correct credit card number:");
       card1 = input4;
       var creditcard = [];
+
+      console.log(7);
+
       for (var i = 0; i < card1.length; i++){
         creditcard.push(card1.charAt(i));
       }
+
+      console.log(8);
 
       for (var w = -2; w <= card1.length;) {
         creditcard[w] = creditcard[w] * 2;
@@ -249,11 +269,17 @@ for (var z = -1; z <= card1.length;) {
           w = w - 2;
       }
 
+      console.log(9);
+
       for (var z = -1; z <= card1.length;) {
         var sum2 = sum + creditcard[z]
         z = z - 2;
+        console.log(sum2);
       }
+
+      console.log(10);
   }
+  console.log(11);
 }
 
   if (card1.chartAt(0) == 3) {
