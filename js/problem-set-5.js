@@ -225,9 +225,9 @@ for (var i = 0; i < card1.length; i++){
   creditcard.push(card1.charAt(i));
 }
 
-console.log(3);
-console.log(card.length);
-console.log(creditcard);
+//console.log(3);
+//console.log(card.length);
+//console.log(creditcard);
 
 var sum = 0;
 //infinite loop because "w" will always be less than card1.
@@ -243,33 +243,33 @@ for (var w = l_number; w >= 0; w = w - 2) {
     sum = sum + Number(creditcard[w]);
   }
 
-console.log("w is " + w);
-console.log("sum is " + sum);
-console.log("Type of variable:");
-console.log(creditcard[w]);
+//console.log("w is " + w);
+//console.log("sum is " + sum);
+//console.log("Type of variable:");
+//console.log(creditcard[w]);
 }
 
 console.log(4);
-var sum2 = 0;
 
 console.log("credit card is: " + creditcard);
 
 var j_number = card1.length - 1;
-for (var z = j_number; z >= 0; z = z - 2) {
-    sum2 = Number(sum2) + Number(sum) + Number(creditcard[z]);
+var sum2 = Number(sum);
 
-    console.log("jj sum 2 is:");
-    console.log(sum2);
-    console.log("sum is");
-    console.log(Number(sum));
-    console.log("creditcard[z]");
-    console.log(creditcard[z]);
+for (var z = j_number; z >= 0; z = z - 2) {
+    sum2 = Number(sum2) + Number(creditcard[z]);
+
+    //console.log("jj sum 2 is:");
+    //console.log(sum2);
+  //  console.log("sum is");
+    //console.log(Number(sum));
+  //  console.log("creditcard[z]");
+    //console.log(creditcard[z]);
 }
 
 console.log(5);
 sum2 = Number(sum2);
-
-console.log("sum 2: " + (sum2 % 10));
+console.log("sum 2 module value: " + (sum2 % 10));
 
   if (sum2 % 10 == 0){
   }
@@ -308,8 +308,8 @@ console.log("sum 2: " + (sum2 % 10));
   console.log(11);
 }
 
-  if (card1.chartAt(0) == 3) {
-    if (card1.chartAt(1) == 4 || card1.chartAt(1) == 7){
+  if (card1.charAt(0) == 3) {
+    if (card1.charAt(1) == 4 || card1.charAt(1) == 7){
       if(card1.length == 15){
           document.getElementById("credit-output").innerHTML = "American Express";
       }
