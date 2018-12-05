@@ -226,24 +226,50 @@ for (var i = 0; i < card1.length; i++){
 }
 
 console.log(3);
-
 console.log(card.length);
-//infinite loop because "w" will always be less than card1 
-for (var w = -2; w <= card1.length;) {
-  creditcard[w] = creditcard[w] * 2;
-  var sum = sum + creditcard[w];
-    w = w - 2;
+console.log(creditcard);
 
-  console.log("w is " + w);
+var sum = 0;
+//infinite loop because "w" will always be less than card1.
+var l_number = card1.length - 2;
+for (var w = l_number; w >= 0; w = w - 2) {
+  creditcard[w] = Number(creditcard[w]) * 2;
+  if (creditcard[w].toString().length == 2) {
+    sum =  sum + Number(creditcard[w].toString().charAt(0));
+    sum = sum + Number(creditcard[w].toString().charAt(1));
+  }
+
+  else{
+    sum = sum + Number(creditcard[w]);
+  }
+
+console.log("w is " + w);
+console.log("sum is " + sum);
+console.log("Type of variable:");
+console.log(creditcard[w]);
 }
 
 console.log(4);
+var sum2 = 0;
 
-for (var z = -1; z <= card1.length;) {
-  var sum2 = sum + creditcard[z];
+console.log("credit card is: " + creditcard);
+
+var j_number = card1.length - 1;
+for (var z = j_number; z >= 0; z = z - 2) {
+    sum2 = Number(sum2) + Number(sum) + Number(creditcard[z]);
+
+    console.log("jj sum 2 is:");
+    console.log(sum2);
+    console.log("sum is");
+    console.log(Number(sum));
+    console.log("creditcard[z]");
+    console.log(creditcard[z]);
 }
 
 console.log(5);
+sum2 = Number(sum2);
+
+console.log("sum 2: " + (sum2 % 10));
 
   if (sum2 % 10 == 0){
   }
