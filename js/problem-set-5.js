@@ -51,14 +51,15 @@ height = Number(height);
 //Number of hashtags = final row length - spaces;
 //Number of hashtags = i + 2
 // char add + 1?
-
+var numb_hashes;
+var numb_of_spaces;
   for (var i = 1; i <= height; i++){
-    var numb_hashes = i;
-    var numb_of_spaces = height - numb_hashes;
+    numb_hashes = i;
+    numb_of_spaces = height - numb_hashes;
     var output_a = ' ';
     var hashes = "#";
       for (var w = 1; w <= numb_of_spaces; w++) {
-          output_a = output_a + '<code>&nbsp&nbsp</code>';
+          output_a = output_a + '<code>&nbsp&</code>';
         }
       for (var z = 0; z < numb_hashes; z++) {
         hashes = hashes + "#";
