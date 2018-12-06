@@ -276,6 +276,7 @@ console.log("sum 2 module value: " + (sum2 % 10));
 
   else {
     console.log(6);
+    document.getElementById("credit-output").innerHTML = "Invalid <br/> <img src='images/invalid.png'>";
     while (sum2 % 10 != 0){
       var input4 = prompt("Enter a correct credit card number:");
       card1 = input4;
@@ -311,25 +312,27 @@ console.log("sum 2 module value: " + (sum2 % 10));
   if (card1.charAt(0) == 3) {
     if (card1.charAt(1) == 4 || card1.charAt(1) == 7){
       if(card1.length == 15){
-          document.getElementById("credit-output").innerHTML = "American Express";
+        document.getElementById("credit-output").innerHTML = "American Express <br/> <img src='images/amex.png'>"
       }
     }
 }
 
-  else if (card1.chartAt(0) == 5) {
-    if (card1.chartAt(1) >= 1 && card1.chartAt(1) <= 5){
+  else if (card1.charAt(0) == 5) {
+    if (card1.charAt(1) >= 1 && card1.charAt(1) <= 5){
       if (card1.length == 16){
-        document.getElementById("credit-output").innerHTML = "Master Card";
+        document.getElementById("credit-output").innerHTML = "Master Card <br/> <img src='images/mastercard.png'>";
       }
     }
   }
 
-  else if (card1.chartAt(0) == 4) {
+  else if (card1.charAt(0) == 4) {
       if (card1.length >= 13 && card1.length <= 16){
-        document.getElementById("credit-output").innerHTML = "Visa";
+        document.getElementById("credit-output").innerHTML = "Visa <br/> <img src='images/visa.png'>";
       }
     }
-
+  else {
+    document.getElementById("credit-output").innerHTML = "Invalid <br/> <img src='images/invalid.png'>";
+  }
 
   // WRITE YOUR EXERCISE 3 CODE HERE
 
@@ -537,12 +540,12 @@ while (i <= 6){
   }
 
   score = Number(score);
-  if (score >= 1 && score <= 10) {
+  if (score >= 0 && score <= 10) {
   }
 
   else {
-    while (score < 1 || score > 10) {
-      var input8 = prompt("Enter a score between 1 and 10:");
+    while (score < 0 || score > 10) {
+      var input8 = prompt("Enter a score between 0 and 10:");
       score = input8;
       score = Number(score);
       if (Number.isInteger(score) == false) {
