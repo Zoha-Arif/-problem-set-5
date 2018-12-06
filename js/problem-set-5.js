@@ -56,16 +56,19 @@ var numb_of_spaces;
   for (var i = 1; i <= height; i++){
     numb_hashes = i;
     numb_of_spaces = height - numb_hashes;
+    console.log("Number of spaces: " + numb_of_spaces);
+    console.log("Number of hashes: " + numb_hashes);
+    console.log("Total hashes and spaces: " + (hashes + numb_of_spaces));
     var output_a = ' ';
     var hashes = "#";
       for (var w = 1; w <= numb_of_spaces; w++) {
-          output_a = output_a + '<code>&nbsp&</code>';
+          output_a = output_a + '<code>&nbsp&nbsp</code>';
         }
       for (var z = 0; z < numb_hashes; z++) {
         hashes = hashes + "#";
       }
 
-      document.getElementById("mario-easy-output").innerHTML += `${output_a}${hashes}<br/>`;
+      document.getElementById("mario-easy-output").innerHTML += `${output_a}${hashes} <br/>`;
 
   }
 
@@ -143,7 +146,8 @@ height = Number(height);
       for (var z = 0; z < numb_hashes; z++) {
         hashes = hashes + "#";
       }
-        document.getElementById("mario-hard-output").innerHTML += `${output_a} ${hashes} &nbsp&nbsp&nbsp ${hashes}<br/>`;
+
+        document.getElementById("mario-hard-output").innerHTML += `${output_a}${hashes}&nbsp&nbsp&nbsp${hashes}<br/>`;
     }
 
   // WRITE YOUR EXERCISE 2 CODE HERE
